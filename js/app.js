@@ -77,8 +77,8 @@ const Router = {
         UI.updateRoleBadge();
       }
 
-      // Update sidebar active state
-      document.querySelectorAll('.sidebar-nav-item').forEach(item => {
+      // Update sidebar and bottom nav active state
+      document.querySelectorAll('.sidebar-nav-item, .bottom-nav-item').forEach(item => {
         item.classList.toggle('active', item.dataset.page === page);
       });
 
@@ -163,7 +163,7 @@ const App = {
   },
 
   initSidebarNav() {
-    document.querySelectorAll('.sidebar-nav-item').forEach(item => {
+    document.querySelectorAll('.sidebar-nav-item, .bottom-nav-item').forEach(item => {
       item.addEventListener('click', (e) => {
         e.preventDefault();
         const page = item.dataset.page;

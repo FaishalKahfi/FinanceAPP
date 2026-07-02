@@ -1501,6 +1501,58 @@ select.form-control {
   border: 1px solid var(--primary-100);
 }
 
+/* ---- Bottom Navigation ---- */
+.bottom-nav {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--white);
+  box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.05);
+  z-index: 900;
+  border-top: 1px solid var(--gray-200);
+}
+
+[data-theme="dark"] .bottom-nav {
+  background: var(--gray-50);
+  border-top-color: var(--gray-100);
+}
+
+.bottom-nav-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 0 8px;
+  color: var(--gray-500);
+  text-decoration: none;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.bottom-nav-item i {
+  font-size: 1.25rem;
+  margin-bottom: 4px;
+  transition: transform var(--transition-fast);
+}
+
+.bottom-nav-item.active {
+  color: var(--primary-600);
+}
+
+.bottom-nav-item.active i {
+  transform: translateY(-2px);
+}
+
+.bottom-nav-item:hover {
+  color: var(--primary-500);
+}
+
 /* ---- Responsive ---- */
 @media (max-width: 768px) {
   .sidebar {
@@ -1521,6 +1573,12 @@ select.form-control {
 
   .page-content {
     padding: 16px;
+    padding-bottom: 80px;
+  }
+
+  .bottom-nav {
+    display: flex;
+    padding-bottom: env(safe-area-inset-bottom);
   }
 
   .summary-cards {
